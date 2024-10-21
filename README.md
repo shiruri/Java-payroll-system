@@ -1,49 +1,81 @@
-<h2 align="left">Hi 👋! My name is ... and I'm a ..., from ....</h2>
+Java Payroll System - Executable JAR
+This project is a simple Payroll System implemented in Java. It provides functionalities to check, add, edit, remove data, and calculate pay using a command-line menu. This program demonstrates how to manage employee data in a small payroll system.
 
-###
+Prerequisites
+Java Development Kit (JDK) installed (JDK 8 or later).
+VS Code or any text editor.
+Terminal/Command Prompt access.
+Project Structure
+graphql
+Copy code
+main/
+│
+├── Main.java        # Entry point for the application
+├── AddData.java     # Handles adding data
+├── CheckData.java   # Handles checking and displaying data
+├── EditData.java    # Handles editing existing data
+├── RemoveData.java  # Handles removing data
+├── Calculatepay.java# Handles payroll calculations
+├── bin/             # (Generated) Directory where compiled class files will be stored
+├── MANIFEST.MF      # Manifest file specifying the entry point for the JAR
+└── MainExecutable.jar   # (Generated) The packaged JAR file
+Classes and Responsibilities
+Main.java
+This file contains the main method, which serves as the entry point to the program. It provides a simple menu-based interface for the user to:
+Check Data
+Add Data
+Edit Data
+Remove Data
+Calculate Pay
+Exit the program
+AddData.java
+Purpose: Handles the logic for adding new employee data into the system.
+This could involve collecting user input for employee details and storing them in an appropriate data structure.
+CheckData.java
+Purpose: Responsible for displaying existing employee data.
+This could involve reading from a stored list or database of employee details and showing them to the user.
+EditData.java
+Purpose: Provides functionality to edit existing employee data.
+The class will likely search for a specific employee, allow changes to be made, and update the records accordingly.
+RemoveData.java
+Purpose: Handles removing an employee’s data from the system.
+The user can specify an employee to be removed, and this class will handle deleting the corresponding data.
+Calculatepay.java
+Purpose: Calculates and displays the payroll for the employees.
+This could include calculating pay based on hours worked, deductions, bonuses, etc.
+Steps to Compile, Package, and Run
+1. Compile the Java Files
+Open your terminal or command prompt, and navigate to the directory containing the project:
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=maurodesouza&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=false" height="150" alt="stats graph"  />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=maurodesouza&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false" height="150" alt="languages graph"  />
-</div>
+bash
+Copy code
+cd C:\Users\Administrator\Documents\main
+Compile the Java files and store the compiled class files in a bin directory:
 
-###
+bash
+Copy code
+javac -d bin *.java
+2. Create a Manifest File
+Create a MANIFEST.MF file in the project directory with the following content:
 
-<img align="right" height="150" src="https://i.imgflip.com/65efzo.gif"  />
+plaintext
+Copy code
+Manifest-Version: 1.0
+Main-Class: Main
+Ensure that the Main-Class is the correct name of your Java class containing the main method.
 
-###
+3. Package the JAR
+Run the following command to package the compiled class files and the manifest into an executable JAR file:
 
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="30" alt="javascript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="30" alt="typescript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="30" alt="react logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="30" alt="html5 logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="30" alt="css3 logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="30" alt="python logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" height="30" alt="csharp logo"  />
-</div>
+bash
+Copy code
+jar cfm MainExecutable.jar MANIFEST.MF -C bin/ .
+This creates the MainExecutable.jar file in your project directory.
 
-###
+4. Run the Executable JAR
+Once the JAR is created, you can run it using the following command:
 
-<div align="left">
-  <img src="https://img.shields.io/static/v1?message=Youtube&logo=youtube&label=&color=FF0000&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="youtube logo"  />
-  <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&label=&color=E4405F&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="instagram logo"  />
-  <img src="https://img.shields.io/static/v1?message=Twitch&logo=twitch&label=&color=9146FF&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="twitch logo"  />
-  <img src="https://img.shields.io/static/v1?message=Discord&logo=discord&label=&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="discord logo"  />
-  <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo"  />
-  <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="linkedin logo"  />
-</div>
-
-###
-
-<br clear="both">
-
-<img src="https://raw.githubusercontent.com/maurodesouza/maurodesouza/output/snake.svg" alt="Snake animation" />
-
-###
+bash
+Copy code
+java -jar MainExecutable.jar
+This will execute your Java program and present the menu interface.
